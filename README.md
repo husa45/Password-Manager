@@ -26,7 +26,7 @@ So the only way to change the password is using the  changing script provided (W
 To download , first clone the repo to the destination place :
 
 ```
-git clone  repo link
+git clone  https://github.com/husa45/Password-Manager
 ```
 
 Install dependencies :
