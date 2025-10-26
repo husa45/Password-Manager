@@ -1,0 +1,4 @@
+salt value:asd
+Password hash:049a68c15c0d6e26c8b4a0743e6b87f074864c2fae5983c88956cb2882d608f5
+username:hussam
+salt path:configs/encryption_salt.txt
