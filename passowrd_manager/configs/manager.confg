@@ -1,4 +1,0 @@
-salt value:salt
-Password hash:81d40d94fee4fb4eeb1a21bb7adb93c06aad35b929c1a2b024ae33b3a9b79e23
-username:hussam
-salt path:/opt/tools/cyber_projects/passowrd_manager/configs/encryption_salt.txt
