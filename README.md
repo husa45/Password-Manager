@@ -20,7 +20,7 @@ You can also view the stored password , and delete it also if you want.**
 **4.Password changing script :
 used to securely change the old password , to the new password .**
 
-**❗❗ Important Note :If the initial configuration script is used as a workaround to change the password , then the old passwords (which was encrypted using the key derived from the old password) ,You won`t be able to access them .
+**❗❗ Important Note : If the initial configuration script is used as a workaround to change the password , then the old passwords (which was encrypted using the key derived from the old password) ,You won`t be able to access them .
 So the only way to change the password is using the  changing script provided (Which makes it secure by design).**
 
 To download , first clone the repo to the destination place :
