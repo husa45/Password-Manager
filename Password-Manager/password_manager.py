@@ -61,7 +61,7 @@ class  LoginGUI:
     def __init__(self):
         #Main login window :
         self.window=tk.Tk()
-        self.window.geometry("700x480")
+        self.window.geometry("800x480")
         self.window.title("Login")
         self.window.resizable(False, False)
         #prevent the window from being closed by X .
@@ -75,15 +75,19 @@ class  LoginGUI:
 
         self.login_button=tk.Button(master=self.window,text="Login",foreground="white",width=15,height=1,background="#003760",font=('Roman Times',10,"bold"),command=self.login_attempt)
         self.username=tk.Entry(width=35,bg="#F7F0F0",font=('Roman Times',10,"bold"))
-        self.password=tk.Entry(width=35,bg="#F7F0F0",font=('Roman Times',10,"bold"))
+        self.password=tk.Entry(width=35,bg="#F7F0F0",font=('Roman Times',10,"bold"),show="*")
         self.lab1=tk.Label(master=self.window,text="Username :",background="#02111F",fg="white",font=('Roman Times',10,"bold"))
         self.lab2 = tk.Label(master=self.window,text="Password: ",background="#02111F",fg="white",font=('Roman Times',10,"bold"))
+        self.to_show=tk.BooleanVar()
+        self.show_pass=tk.Checkbutton(self.window,text="Show password",background="#02111F",fg="red",variable=self.to_show,command=self.toggle_show)
+
         #placing controls at their respective place :
-        self.username.place(x=320,y=200)
-        self.password.place(x=320,y=275)
-        self.lab1.place(x=195,y=200)
-        self.lab2.place(x=195,y=275)
-        self.login_button.place( x=480,y=320)
+        self.username.place(x=380,y=200)
+        self.password.place(x=380,y=275)
+        self.lab1.place(x=240,y=200)
+        self.lab2.place(x=240,y=275)
+        self.login_button.place( x=560,y=320)
+        self.show_pass.place(y=327,x=380)
         #start:
         self.window.mainloop()
     def login_attempt(self):
@@ -117,8 +121,12 @@ class  LoginGUI:
         else:
             messagebox.showerror(title="Failed !!!",message="The username or password that you provided\nis incorrect , try again")
     def disable_event(self)->'None':
-
         pass
+    def toggle_show(self):
+        if self.to_show.get():
+            self.password.config(show="")
+        else:
+            self.password.config(show="*")
     def on_closing(self)->'None':
         """
         Action invoked when trying to close the window
@@ -137,7 +145,7 @@ class PassManager:
 
         self.window = tk.Tk()
         self.window.title("Password Manager")
-        self.window.geometry("700x480")
+        self.window.geometry("800x480")
         self.window.resizable(False,False)
         self.window.protocol("WM_DELETE_WINDOW",self.on_closing)
 
@@ -166,9 +174,9 @@ class PassManager:
         self.droplist.place(x=350,y=10)
 
         #place controls at their respective locations :
-        self.add_pass_button.place(x=225,y=380)
+        self.add_pass_button.place(x=240,y=380)
         self.pass_gen_box.place(x=300,y=320)
-        self.pass_gen_button.place(x=530,y=320)
+        self.pass_gen_button.place(x=580,y=320)
         self.pass_ask_label.place( x=200,y=320)
         self.username_label.place(x=200, y=260)
         self.username_entry.place(x=350,y=260)
